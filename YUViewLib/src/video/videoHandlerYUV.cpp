@@ -2482,6 +2482,10 @@ videoHandlerYUV::videoHandlerYUV() : videoHandler()
       PixelFormatYUV(Subsampling::YUV_420, 10, PlaneOrder::YUV)); // YUV 4:2:0 10 bit
   this->presetList.append(PixelFormatYUV(Subsampling::YUV_422, 8, PlaneOrder::YUV)); // YUV 4:2:2
   this->presetList.append(PixelFormatYUV(Subsampling::YUV_444, 8, PlaneOrder::YUV)); // YUV 4:4:4
+  this->presetList.append(PixelFormatYUV(Subsampling::YUV_422, 8, PlaneOrder::YUV, false, {}, true)); // NV16
+  this->presetList.append(PixelFormatYUV(Subsampling::YUV_420, 8, PlaneOrder::YUV, false, {}, true)); // NV12
+  this->presetList.append(PixelFormatYUV(Subsampling::YUV_422, 8, PackingOrder::YUYV, false, false, {})); // YUYV
+
   for (auto e : PredefinedPixelFormatMapper.getEnums())
     this->presetList.append(e);
 }
