@@ -2483,8 +2483,13 @@ videoHandlerYUV::videoHandlerYUV() : videoHandler()
   this->presetList.append(PixelFormatYUV(Subsampling::YUV_422, 8, PlaneOrder::YUV)); // YUV 4:2:2
   this->presetList.append(PixelFormatYUV(Subsampling::YUV_444, 8, PlaneOrder::YUV)); // YUV 4:4:4
   this->presetList.append(PixelFormatYUV(Subsampling::YUV_422, 8, PlaneOrder::YUV, false, {}, true)); // NV16
+  this->presetList.append(PixelFormatYUV(Subsampling::YUV_422, 8, PlaneOrder::YVU, false, {}, true)); // NV61
   this->presetList.append(PixelFormatYUV(Subsampling::YUV_420, 8, PlaneOrder::YUV, false, {}, true)); // NV12
+  this->presetList.append(PixelFormatYUV(Subsampling::YUV_420, 8, PlaneOrder::YVU, false, {}, true)); // NV21
   this->presetList.append(PixelFormatYUV(Subsampling::YUV_422, 8, PackingOrder::YUYV, false, false, {})); // YUYV
+  this->presetList.append(PixelFormatYUV(Subsampling::YUV_422, 8, PackingOrder::UYVY, false, false, {})); // UYVY
+  this->presetList.append(PixelFormatYUV(Subsampling::YUV_422, 8, PackingOrder::YVYU, false, false, {})); // YVYU
+  this->presetList.append(PixelFormatYUV(Subsampling::YUV_422, 8, PackingOrder::VYUY, false, false, {})); // VYUY
 
   for (auto e : PredefinedPixelFormatMapper.getEnums())
     this->presetList.append(e);
